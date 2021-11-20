@@ -1,0 +1,116 @@
+﻿@model OnlineShopping.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link href="~/Content/font-awesome.css" rel="stylesheet" />
+        <script src="~/Scripts/popper.js"></script>*@
+    @*<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">*@
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">*@
+    <style>
+        .back_image {
+            background-image: url("https://c0.wallpaperflare.com/preview/813/237/71/blur-blurred-background-boutique-clothes-thumbnail.jpg");
+            background-size: cover;
+            opacity: 10.0;
+        }
+
+        .footer1 {
+            padding: 10px;
+            margin-left: 250px;
+            margin-right: 300px;
+            margin-top: 50px;
+            color: darkgoldenrod;
+            font-family: Calibri;
+            text-decoration-thickness: auto;
+            background-color: #C19A6B;
+        }
+
+        .footer2 {
+            padding: 10px;
+            margin-left: 50px;
+            margin-right: 20px;
+            margin-top: 50px;
+            color: darkgoldenrod;
+            font-family: Calibri;
+            text-decoration-thickness: auto;
+            background-color: #C19A6B;
+        }
+
+        a:link, a:visited {
+            color: blanchedalmond;
+            
+            cursor: pointer;
+        }
+
+            a:link:active, a:visited:active {
+                color: blanchedalmond;
+            }
+    </style>
+</head>
+<body class="back_image" style="align-content:center;margin-left:auto;margin-right:auto;">
+    <div class="footer1">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="padding-bottom:20px">
+            <h4 style="text-align:center;font-size:50px;color:brown;">LOGIN </h4>
+
+            <div style="font-size:20px;color:brown;" class="footer2">
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+            }
+            <div style="font-size:20px;color:darkgoldenrod;">
+
+                @*<a href="Signup">New User ? Create a new account</a>*@
+                @Html.ActionLink("New User ? Create a new account", "Signup")
+                <br />
+
+
+                
+                    @Html.ActionLink("Forgot Password", "Reset")
+                </div>
+            </div>
+        }
+
+</div>
+</body>
+</html>

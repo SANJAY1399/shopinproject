@@ -1,0 +1,30 @@
+﻿@model IEnumerable<OnlineShopping.Models.womenprod>
+@using OnlineShopping.Models
+
+@{
+    ViewBag.Title = "Womens Collection";
+}
+
+<h2> Womens Products:</h2>
+
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/Content/Images/@item.Image" alt="Card image cap" width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@item.clothName</h5>
+                    <p class="card-text">Rs.@item.Price</p>
+                    <input type="button" value="Add to Cart" onclick="location.href='@Url.Action("CartView", "Product", new { id = @item.ClothID })'" class="btn-primary" />
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+
+</div>

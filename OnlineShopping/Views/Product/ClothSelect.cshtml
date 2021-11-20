@@ -1,0 +1,58 @@
+﻿@model IEnumerable<OnlineShopping.Models.cart>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClothID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clothName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClothID)
+        </td>
+        <td>
+            <img class="card-img-top" src="~/Content/Images/@item.Image" alt="Card image cap" width="50" height="50">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clothName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |*@
+            <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Product", new { id = @item.ClothID })'" style="background-color:red;  border-radius:5px" />
+        </td>
+    </tr>
+}
+    @{ 
+        int Total = 0;
+    }
+    @foreach(var item in Model)
+    {
+        Total = Total + Convert.ToInt32(item.Price);
+    }
+    <tr><td>Total price is:</td><td>@Total</td> </tr>
+</table>

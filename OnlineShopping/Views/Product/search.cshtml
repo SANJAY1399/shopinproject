@@ -1,0 +1,36 @@
+﻿@model IEnumerable<OnlineShopping.Models.cloth>
+@using OnlineShopping.Models
+
+
+@{
+    ViewBag.Title = "search";
+}
+
+
+  
+    <div class="container">
+    @foreach (var item in Model)
+    {
+
+        <div class="col-lg-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="~/Content/Images/@item.Image" alt="Card image cap" width="200" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">@item.clothName</h5>
+                    <p class="card-text">Rs.@item.Price</p>
+                    <input type="button" value="Add to Cart" onclick="location.href='@Url.Action("CartView", "Product", new { id = @item.ClothID })'" class="btn-primary" />
+                </div>
+            </div>
+        </div>
+
+
+    }
+</div>
+    
+<style>
+ 
+    .col-lg-3 {
+        padding-bottom: 25px;
+        padding-top: 40px;
+    }
+</style>

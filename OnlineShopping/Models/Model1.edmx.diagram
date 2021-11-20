@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="180c35bba2fe4e0a9833660e96d15336" Name="Diagram1">
+        <EntityTypeShape EntityType="shoppingModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="shoppingModel.cloth" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="shoppingModel.Material" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="shoppingModel.FK__cloth__CategoryI__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="shoppingModel.FK__cloth__MaterialI__2B3F6F97" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="shoppingModel.kidprod" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="shoppingModel.menprod" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="shoppingModel.womenprod" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="shoppingModel.accdet" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="shoppingModel.cart" Width="1.5" PointX="7.375" PointY="4.75" />
+        <EntityTypeShape EntityType="shoppingModel.usercart" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="shoppingModel.Userrole" Width="1.5" PointX="11.625" PointY="1.5" />
+        <EntityTypeShape EntityType="shoppingModel.User" Width="1.5" PointX="9.375" PointY="1" />
+        <AssociationConnector Association="shoppingModel.FK__Userrole__UserID__3E52440B" />
+        <EntityTypeShape EntityType="shoppingModel.Reset" Width="1.5" PointX="0.75" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

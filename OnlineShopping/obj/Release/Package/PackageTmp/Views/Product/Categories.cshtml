@@ -1,0 +1,22 @@
+﻿@model IEnumerable<OnlineShopping.Models.Category>
+@using OnlineShopping.Models 
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4">
+            <a href='@Url.Action("CatSelect","Product",new { id = @item.CategoryID })'>
+                <img src="~/Images/@item.Image" width="200" height="200" />
+            </a>
+           
+
+            
+        </div>
+    }
+</div>
+
+        

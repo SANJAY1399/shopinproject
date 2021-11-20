@@ -1,0 +1,82 @@
+﻿@model IEnumerable<OnlineShopping.Models.usercart>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Your Cart</h2>
+
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>*@
+        <th>
+            <label for="clothId">Product Id</label><br>
+            @*@Html.DisplayNameFor(model => model.clothID)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            <label for="clothName">Product Name</label><br>
+            @*@Html.DisplayNameFor(model => model.clothName)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.clothID)
+            </td>
+            <td>
+                <img class="card-img-top" src="~/Content/Images/@item.Image" alt="Card image cap" width="50" height="50">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clothName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |*@
+                <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Product", new { id = @item.clothID })'" style="background-color:red;  border-radius:5px" />
+            </td>
+
+        </tr>
+    }
+
+    @{
+        int Total = 0;
+    }
+    @foreach (var item in Model)
+    {
+        Total = Total + Convert.ToInt32(item.Price);
+    }
+    <tr>
+    <td></td>
+    <td></td>
+    <td><b>TOTAL PRICE:</b></td>
+    <td><b>@Total</b></td>
+    <td>
+        <div>
+    <input type="button" value="checkout" onclick="location.href='@Url.Action("Create", "Buy")'" class="btn-primary" />
+
+</div>
+    </td>
+    </tr>
+
+</table>
+
+

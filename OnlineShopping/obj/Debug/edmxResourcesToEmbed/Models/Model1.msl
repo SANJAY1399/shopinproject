@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="shoppingModelStoreContainer" CdmEntityContainer="shoppingEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="shoppingModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clothes">
+      <EntityTypeMapping TypeName="shoppingModel.cloth">
+        <MappingFragment StoreEntitySet="cloth">
+          <ScalarProperty Name="ClothID" ColumnName="ClothID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materials">
+      <EntityTypeMapping TypeName="shoppingModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="shoppingModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ph_number" ColumnName="ph_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kidprods">
+      <EntityTypeMapping TypeName="shoppingModel.kidprod">
+        <MappingFragment StoreEntitySet="kidprods">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ClothID" ColumnName="ClothID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menprods">
+      <EntityTypeMapping TypeName="shoppingModel.menprod">
+        <MappingFragment StoreEntitySet="menprods">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ClothID" ColumnName="ClothID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="womenprods">
+      <EntityTypeMapping TypeName="shoppingModel.womenprod">
+        <MappingFragment StoreEntitySet="womenprods">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ClothID" ColumnName="ClothID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accdets">
+      <EntityTypeMapping TypeName="shoppingModel.accdet">
+        <MappingFragment StoreEntitySet="accdet">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="AlternatePhoneNumber" ColumnName="AlternatePhoneNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carts">
+      <EntityTypeMapping TypeName="shoppingModel.cart">
+        <MappingFragment StoreEntitySet="cart">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ClothID" ColumnName="ClothID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usercarts">
+      <EntityTypeMapping TypeName="shoppingModel.usercart">
+        <MappingFragment StoreEntitySet="usercart">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="clothName" ColumnName="clothName" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="clothID" ColumnName="clothID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Userroles">
+      <EntityTypeMapping TypeName="shoppingModel.Userrole">
+        <MappingFragment StoreEntitySet="Userrole">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

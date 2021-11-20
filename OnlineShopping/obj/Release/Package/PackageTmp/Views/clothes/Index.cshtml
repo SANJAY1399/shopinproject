@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OnlineShopping.Models.cloth>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.clothName)*@
+            <label for="clothName">Products</label><br>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Category.CategoryName)*@
+            <label for="CategoryName">Category</label><br>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Material.MaterialName)*@
+            <label for="MaterialName">Material</label><br>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.clothName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <img class="card-img-top" src="~/Content/Images/@item.Image" alt="Card image cap" width="50" height="50">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Material.MaterialName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClothID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClothID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClothID })
+        </td>
+    </tr>
+}
+
+</table>

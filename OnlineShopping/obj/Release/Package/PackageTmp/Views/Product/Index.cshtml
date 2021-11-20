@@ -1,0 +1,50 @@
+﻿@model IEnumerable<OnlineShopping.Models.cloth>
+@using OnlineShopping.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Products:</h2>
+<div class="cat">
+    <div class="col-lg-4">
+        <a href='@Url.Action("KidMats","Product")'>
+            <img src="~/Images/k.jpeg" width="200" height="200" />
+        </a>
+    </div>
+
+    <div class="col-lg-4">
+        <a href='@Url.Action("MenMats","Product")'>
+            <img src="~/Images/m.jpeg" width="200" height="200" />
+        </a>
+    </div>
+
+    <div class="col-lg-4">
+        <a href='@Url.Action("WomenMats","Product")'>
+            <img src="~/Images/w.jpeg" width="200" height="200" />
+        </a>
+    </div>
+</div>
+
+@*<div class="container">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Images/@item.Image" alt="Card image cap" width="200" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.clothName</h5>
+                            <p class="card-text">@item.Price</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                    </div>
+
+
+                }
+
+
+    </div>*@
+
+

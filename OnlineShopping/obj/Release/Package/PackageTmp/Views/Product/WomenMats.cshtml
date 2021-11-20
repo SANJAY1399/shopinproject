@@ -1,0 +1,29 @@
+﻿@model IEnumerable<OnlineShopping.Models.Material>
+@using OnlineShopping.Models
+@{
+    ViewBag.Title = "Materials";
+}
+
+<h2>Materials</h2>
+<div class="container">
+    @foreach (var item in Model)
+    {
+    <div class="col-sm-3">
+        <a href='@Url.Action("WmatSelect","Product",new { wmid = @item.MaterialID})'>
+            <img src="~/Content/Images/@item.Image" width="200" height="200" style="border-radius:50%" />
+        </a>
+        <p><b>@item.MaterialName</b></p>
+
+
+    </div>
+    }
+</div>
+<style>
+    .col-sm-3 {
+        text-align: center;
+    }
+
+        .col-sm-3:hover img {
+            transform: scale(1.25);
+        }
+</style>

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="accdet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AlternatePhoneNumber" Type="varchar" MaxLength="10" />
+    <Property Name="PinCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClothID" Type="int" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="20" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="60" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cloth">
+    <Key>
+      <PropertyRef Name="ClothID" />
+    </Key>
+    <Property Name="ClothID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="MaterialID" Type="int" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="60" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
+    <Property Name="Image" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="MaterialID" />
+    </Key>
+    <Property Name="MaterialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaterialName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reset">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="30" />
+    <Property Name="NewPassword" Type="nvarchar" MaxLength="30" />
+    <Property Name="ConfirmPassword" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="usercart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="20" />
+    <Property Name="clothID" Type="int" />
+    <Property Name="Image" Type="nvarchar" MaxLength="20" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Userrole">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="emailid" Type="nvarchar" MaxLength="50" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="ph_number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'shopping.dbo.kidprods' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="kidprods">
+    <Key>
+      <PropertyRef Name="ClothID" />
+    </Key>
+    <Property Name="ClothID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="MaterialID" Type="int" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
+    <Property Name="Image" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'shopping.dbo.menprods' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="menprods">
+    <Key>
+      <PropertyRef Name="ClothID" />
+    </Key>
+    <Property Name="ClothID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="MaterialID" Type="int" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
+    <Property Name="Image" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'shopping.dbo.womenprods' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="womenprods">
+    <Key>
+      <PropertyRef Name="ClothID" />
+    </Key>
+    <Property Name="ClothID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="MaterialID" Type="int" />
+    <Property Name="clothName" Type="nvarchar" MaxLength="20" />
+    <Property Name="Price" Type="nvarchar" MaxLength="10" />
+    <Property Name="Image" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__cloth__CategoryI__2A4B4B5E">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="cloth" Type="Self.cloth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="cloth">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cloth__MaterialI__2B3F6F97">
+    <End Role="Material" Type="Self.Material" Multiplicity="0..1" />
+    <End Role="cloth" Type="Self.cloth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="MaterialID" />
+      </Principal>
+      <Dependent Role="cloth">
+        <PropertyRef Name="MaterialID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Userrole__UserID__3E52440B">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Userrole" Type="Self.Userrole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="Userrole">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="shoppingModelStoreContainer">
+    <EntitySet Name="accdet" EntityType="Self.accdet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cart" EntityType="Self.cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cloth" EntityType="Self.cloth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reset" EntityType="Self.Reset" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usercart" EntityType="Self.usercart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Userrole" EntityType="Self.Userrole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kidprods" EntityType="Self.kidprods" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [kidprods].[ClothID] AS [ClothID], 
+    [kidprods].[CategoryID] AS [CategoryID], 
+    [kidprods].[MaterialID] AS [MaterialID], 
+    [kidprods].[clothName] AS [clothName], 
+    [kidprods].[Price] AS [Price], 
+    [kidprods].[Image] AS [Image]
+    FROM [dbo].[kidprods] AS [kidprods]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="menprods" EntityType="Self.menprods" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [menprods].[ClothID] AS [ClothID], 
+    [menprods].[CategoryID] AS [CategoryID], 
+    [menprods].[MaterialID] AS [MaterialID], 
+    [menprods].[clothName] AS [clothName], 
+    [menprods].[Price] AS [Price], 
+    [menprods].[Image] AS [Image]
+    FROM [dbo].[menprods] AS [menprods]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="womenprods" EntityType="Self.womenprods" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [womenprods].[ClothID] AS [ClothID], 
+    [womenprods].[CategoryID] AS [CategoryID], 
+    [womenprods].[MaterialID] AS [MaterialID], 
+    [womenprods].[clothName] AS [clothName], 
+    [womenprods].[Price] AS [Price], 
+    [womenprods].[Image] AS [Image]
+    FROM [dbo].[womenprods] AS [womenprods]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__cloth__CategoryI__2A4B4B5E" Association="Self.FK__cloth__CategoryI__2A4B4B5E">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="cloth" EntitySet="cloth" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cloth__MaterialI__2B3F6F97" Association="Self.FK__cloth__MaterialI__2B3F6F97">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="cloth" EntitySet="cloth" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Userrole__UserID__3E52440B" Association="Self.FK__Userrole__UserID__3E52440B">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Userrole" EntitySet="Userrole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
